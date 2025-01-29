@@ -90,7 +90,7 @@ class CameraViewModel(
                         onResult = ::onVideoResult
                     )
 
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> {
+                    else -> {
                         toggleRecording(
                             FileOutputOptions.Builder(fileDataSource.getFile("mp4")).build(),
                             onResult = ::onVideoResult

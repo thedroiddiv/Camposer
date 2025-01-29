@@ -12,10 +12,6 @@ enum class CameraOption(@StringRes val titleRes: Int) {
 
     fun toCaptureMode(): CaptureMode = when(this) {
         QRCode, Photo -> CaptureMode.Image
-        Video -> if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            CaptureMode.Video
-        } else {
-            throw IllegalStateException("Camera state not support video capture mode")
-        }
+        Video -> CaptureMode.Video
     }
 }
